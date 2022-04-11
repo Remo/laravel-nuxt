@@ -1,8 +1,12 @@
-require('dotenv').config()
-const { join } = require('path')
-const { copySync, removeSync } = require('fs-extra')
+import { defineNuxtConfig } from '@nuxt/bridge'
 
-module.exports = {
+import dotenv from 'dotenv'
+dotenv.config()
+
+import { join } from 'path'
+import { copySync, removeSync } from 'fs-extra'
+
+export default defineNuxtConfig({
   ssr: false,
 
   srcDir: __dirname,
@@ -69,4 +73,4 @@ module.exports = {
       }
     }
   }
-}
+})
